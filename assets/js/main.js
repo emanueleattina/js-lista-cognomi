@@ -5,20 +5,21 @@
 
 var lista = ["Bianchi", "Rossi", "Perlari", "Lodigiani", "Mastrobattista", "Verdi"];
 var cognomeUtente;
+var cognomeUpper
 var posizione;
 var i;
 
 cognomeUtente = prompt("Inserisci il tuo cognome");
 
-console.log(cognomeUtente[0].toUpperCase() + cognomeUtente.slice(1));
-lista.push(cognomeUtente[0].toUpperCase() + cognomeUtente.slice(1));
+cognomeUpper = cognomeUtente[0].toUpperCase() + cognomeUtente.slice(1);
+lista.push(cognomeUpper);
 
 lista.sort();
 
 for (i = 0; i < lista.length; i++)
 {
   document.getElementById('lista').innerHTML += "<li>" + lista[i] + "</li>";
-  if (cognomeUtente[0].toUpperCase() + cognomeUtente.slice(1) == lista[i])
+  if (cognomeUpper == lista[i])
   {
     posizione = i;
     console.log(posizione);
@@ -26,4 +27,3 @@ for (i = 0; i < lista.length; i++)
 }
 
 document.getElementById('posizione').innerHTML += "Ti trovi alla posizione numero " + (posizione + 1);
-
