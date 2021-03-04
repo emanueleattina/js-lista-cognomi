@@ -18,10 +18,12 @@ lista.sort();
 for (i = 0; i < lista.length; i++)
 {
   document.getElementById('lista').innerHTML += "<li>" + lista[i] + "</li>";
-  if (cognomeUtente == lista[i])
+  if (cognomeUtente[0].toUpperCase() + cognomeUtente.slice(1) == lista[i])
   {
     posizione = i;
+    console.log(posizione);
   }
 }
 
 document.getElementById('posizione').innerHTML += "Ti trovi alla posizione numero " + (posizione + 1);
+
